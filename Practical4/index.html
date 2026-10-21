@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Discover campus events, connect with students, and stay updated with college activities.">
+  <title>Home | StudentHub</title>
+  <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header"><a class="brand" href="index.html">StudentHub</a><button id="menuToggle" class="menu-toggle" aria-expanded="false" aria-controls="primaryNav">☰ Menu</button><nav id="primaryNav" aria-label="Main navigation"><a href="index.html">Home</a><a href="about.html">About</a><a href="events.html">Events</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a><a href="login.html">Login</a></nav></header>
+  <main id="main" class="container">
+    <section class="hero"><p class="eyebrow">Campus • Community • Connection</p><h1>Welcome to StudentHub</h1><p>Discover campus events, connect with students, and stay updated with college activities.</p></section>
+    <div id="notice" class="notice" role="status">Welcome! Check the latest campus updates.</div>
+<section class="cards"><article><h2>Upcoming Event</h2><p>Campus Tech Meetup</p><button id="openModal">View details</button></article><article><h2>Student Life</h2><p>Take part in campus activities.</p></article></section>
+<section><h2>Quick FAQ</h2><button class="faq-toggle" aria-expanded="false">How do I join an event?</button><p class="faq-answer" hidden>Open Events and follow the event instructions.</p></section>
+<div class="modal" id="eventModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden><div class="modal-content"><button id="closeModal" class="close" aria-label="Close dialog">×</button><h2 id="modalTitle">Campus Tech Meetup</h2><p>This is a sample event details popup.</p></div></div>
+<div class="slider"><p id="slideText">Learn. Connect. Participate.</p><button id="prevSlide">Previous</button><button id="nextSlide">Next</button></div>
+<button id="themeToggle" class="theme-button">Switch light/dark theme</button>
+  </main>
+  <footer><p>StudentHub © 2026 — Student portal demo</p></footer>
+  <script src='JS/app.js'></script>
+</body>
+</html>
