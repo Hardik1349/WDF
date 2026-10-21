@@ -1,0 +1,1 @@
+CSV records created by process_form.php are stored in this folder. Apache access is denied by .htaccess. Keep this folder writable by PHP. Do not upload real student data to a public server for this classroom demo.
