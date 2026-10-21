@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secure User Registration | CampusConnect</title>
+  <link rel="stylesheet" href="CSS/style.css">
+  <style>
+    .secure-form {max-width:560px;margin:30px auto;padding:28px;background:#fff;border-radius:14px;box-shadow:0 8px 28px rgba(16,25,54,.10)}
+    .secure-form label {display:block;margin-top:15px;font-weight:600}
+    .secure-form input {width:100%;padding:12px;margin-top:6px;border:1px solid #ccd1df;border-radius:7px;box-sizing:border-box}
+    .secure-form button {margin-top:22px;width:100%;padding:12px;border:0;border-radius:7px;background:#5b3fd3;color:white;font-weight:bold;cursor:pointer}
+    .hint {color:#687083;font-size:13px}
+  </style>
+</head>
+<body>
+<header><nav class="navbar"><div class="logo">🎓 CampusConnect</div><div class="nav-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="registration.html">Student Registration</a><a href="secure_registration.html">Secure Registration</a><a href="events.html">Events</a></div></nav></header>
+<main>
+  <section class="page-heading"><small>PRACTICAL 9</small><h1>Secure User Registration</h1><p>Register with a unique username and email address.</p></section>
+  <form class="secure-form" action="register_user.php" method="post" id="secureForm">
+    <h2>Create Account</h2>
+    <label for="username">Username</label>
+    <input id="username" name="username" type="text" minlength="3" maxlength="50" pattern="[A-Za-z0-9_]+" autocomplete="username" required>
+    <p class="hint">Use 3–50 letters, numbers or underscores.</p>
+    <label for="email">Email address</label>
+    <input id="email" name="email" type="email" maxlength="150" autocomplete="email" required>
+    <label for="password">Password</label>
+    <input id="password" name="password" type="password" minlength="8" autocomplete="new-password" required>
+    <p class="hint">At least 8 characters, with uppercase, lowercase, number and special character.</p>
+    <label for="confirm_password">Confirm password</label>
+    <input id="confirm_password" name="confirm_password" type="password" minlength="8" autocomplete="new-password" required>
+    <button type="submit">Create Account</button>
+  </form>
+</main>
+<script>
+const form = document.getElementById('secureForm');
+form.addEventListener('submit', function(event) {
+  const password = document.getElementById('password');
+  const confirmPassword = document.getElementById('confirm_password');
+  const strong = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9\s]).{8,}$/;
+  password.setCustomValidity(strong.test(password.value) ? '' : 'Use at least 8 characters with uppercase, lowercase, number and special character.');
+  confirmPassword.setCustomValidity(password.value === confirmPassword.value ? '' : 'Passwords do not match.');
+  if (!form.checkValidity()) { event.preventDefault(); form.reportValidity(); }
+});
+</script>
+</body>
+</html>
